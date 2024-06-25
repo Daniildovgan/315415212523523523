@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() {
+    const int N = 5; 
+    int arr1[N] = {1, 2, 3, 4, 5};
+    int arr2[N] = {0, 0, 0, 0, 0};
+    int arr3[2 * N];
+
+    int k = 0;
+    for (int i = 0; i < N; ++i) {
+        if (arr1[i] > 0) {
+            arr3[k++] = arr1[i];
+        }
+    }
+    for (int i = 0; i < N; ++i) {
+        if (arr2[i] == 0) {
+            arr3[k++] = arr2[i];
+        }
+    }
+    for (int i = 0; i < N; ++i) {
+        if (arr1[i] < 0) {
+            arr3[k++] = arr1[i];
+        }
+    }
+
+    for (int i = 0; i < 2 * N; ++i) {
+        std::cout << arr3[i] << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
